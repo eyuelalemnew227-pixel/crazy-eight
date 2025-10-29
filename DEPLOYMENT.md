@@ -52,10 +52,32 @@ This will:
 
 ## Firebase Configuration for Production
 
-After deployment, you need to add your GitHub Pages domain to Firebase:
+After deployment, you need to configure Firebase for GitHub Pages:
+
+### 1. Add Authorized Domain
 
 1. Go to [Firebase Console](https://console.firebase.google.com/)
-2. Select your project
+2. Select your project: **crazy-eights-ac61b**
 3. Go to **Authentication** → **Settings** → **Authorized domains**
-4. Add: `eyuelalemnew227-pixel.github.io`
+4. Click **Add domain**
+5. Add: `eyuelalemnew227-pixel.github.io`
+6. Click **Add**
+
+### 2. Check API Key Restrictions (CRITICAL for fixing API key errors)
+
+If you see "api-key-not-valid" errors, your API key might have restrictions:
+
+1. Go to [Google Cloud Console](https://console.cloud.google.com/)
+2. Select your project: **crazy-eights-ac61b**
+3. Go to **APIs & Services** → **Credentials**
+4. Find your API key and click to edit it
+5. Under **Application restrictions**:
+   - If "HTTP referrers" is selected, add:
+     - `https://eyuelalemnew227-pixel.github.io/*`
+     - `https://eyuelalemnew227-pixel.github.io/crazy-eight/*`
+   - Or temporarily set to "None" for testing
+6. Click **Save**
+7. Wait 5-10 minutes for changes to propagate
+
+See [FIREBASE_GITHUB_PAGES_FIX.md](./FIREBASE_GITHUB_PAGES_FIX.md) for detailed troubleshooting.
 
