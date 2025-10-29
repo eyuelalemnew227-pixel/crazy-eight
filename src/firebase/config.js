@@ -5,13 +5,16 @@ import { getAuth } from 'firebase/auth';
 // Using environment variables for security (recommended)
 // Or replace with your actual Firebase project configuration
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "YOUR_API_KEY",
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "YOUR_AUTH_DOMAIN",
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "YOUR_PROJECT_ID",
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || "YOUR_STORAGE_BUCKET",
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || "YOUR_MESSAGING_SENDER_ID",
-  appId: import.meta.env.VITE_FIREBASE_APP_ID || "YOUR_APP_ID"
+  apiKey: "AIzaSyB4vaC-BEagN1pk-6gFter0CrBcowL8hHc",
+  authDomain: "crazy-eights-ac61b.firebaseapp.com",
+  projectId: "crazy-eights-ac61b",
+  storageBucket: "crazy-eights-ac61b.firebasestorage.app",
+  messagingSenderId: "131601808507",
+  appId: "1:131601808507:web:5ececf58fae4854d6df6de",
+  measurementId: "G-N8X460L0VT"
 };
+
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -19,4 +22,3 @@ const app = initializeApp(firebaseConfig);
 // Initialize Firebase Authentication and get a reference to the service
 export const auth = getAuth(app);
 export default app;
-
